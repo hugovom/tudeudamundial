@@ -4,7 +4,7 @@ Author URI: http://deudamundial.com/
 Version: 1.0
 */
 html {
-  background: #e6e7e9;
+  background: white;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
   min-height: 100%;
@@ -750,6 +750,16 @@ input:focus, select:focus, textarea:focus {
 
 /* =Main content and comment content
 -------------------------------------------------------------- */
+header h1 {
+  text-align: center; }
+header h2 {
+  font-size: 80px; }
+  header h2 span {
+    font-size: 16px; }
+  header h2 small {
+    display: block;
+    font-size: 20px; }
+
 /* =Media queries
 -------------------------------------------------------------- */
 @media screen and (min-width: 480px) and (max-width: 991px) { }

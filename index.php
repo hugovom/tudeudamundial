@@ -12,7 +12,7 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
@@ -20,8 +20,22 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-		<h1>Tu deuda mundial</h1>
-        <p>Aquí vamos</p>
+        <div id="main" class="container">
+        	<header class="row">
+				<div class="col-md-6">
+					<h1>Tu deuda mundial</h1>
+				</div>
+				<div class="col-md-6">
+					<h2>$20,000<span>MXN</span> <small>($2,000 USD)</small>  </h2>
+					<p>Cada mexicano tiene una deuda externa</p>
+				</div>
+				<div class="col-md-12">
+				
+				
+				<p>Aquí vamos o no?=</p>
+				</div>
+			</header>
+        </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>

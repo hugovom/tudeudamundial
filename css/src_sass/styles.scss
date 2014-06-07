@@ -7,7 +7,16 @@
 
 /* =Main content and comment content
 -------------------------------------------------------------- */
-
+header {
+	h1 { text-align: center;}
+	h2 { font-size: 80px;
+		span { font-size: 16px;}
+		small {
+		display: block;
+		font-size: 20px;
+		}
+	}
+}
   
 
 /* =Media queries
