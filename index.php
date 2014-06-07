@@ -39,14 +39,16 @@
 				
 				<p>
 					<a href="#ciudadano" class="citizens">Ciudadanos</a>
-				 <a href="#pib" class="pib">Historial de PIB</a>
-				 <a href="#ciudadano" class="graphs current">Historial de Deuda</a></p>
+				 <a href="#deudaperperson" class="deudaperperson">Historial deuda por Persona</a>
+				 <a href="#ciudadano" class="graphs current">Historial de Deuda por País</a>
+				 <a href="#pib" class="pib">Historial de PIB por País</a></p>
 				</div>
 			</div>
 			<article class="row">
 			
         	<div class="row-md-12">
         		<div id="ciudadano"></div>
+        		<div id="deudaperperson"></div>
         		<div id="pib"></div>
 				<div id="viz"></div>
         	</div>

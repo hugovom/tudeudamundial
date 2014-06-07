@@ -38,9 +38,11 @@ li { margin-left: 30px;}
 a.citizens,
 a.graphs,
 a.pib,
+a.deudaperperson,
 a:visited.citizens,
 a:visited.graphs,
-a:visited.pib  { 
+a:visited.pib,
+a:visited.deudaperperson  { 
 	background: black;
 	color: #fff;
 	font-size: 12px;
@@ -50,7 +52,8 @@ a:visited.pib  {
  
 #viz,
 #ciudadano,
-#cocas { 
+#pib,
+#deudaperperson { 
  	margin: 0 auto;
  	z-index: 9999;
  	height: 500px;

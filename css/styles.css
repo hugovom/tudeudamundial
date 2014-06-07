@@ -777,15 +777,15 @@ header {
 li {
   margin-left: 30px; }
 
-a.citizens, a.graphs, a.pib, a:visited.citizens, a:visited.graphs, a:visited.pib {
+a.citizens, a.graphs, a.pib, a.deudaperperson, a:visited.citizens, a:visited.graphs, a:visited.pib, a:visited.deudaperperson {
   background: black;
   color: #fff;
   font-size: 12px;
   padding: 5px 15px; }
-  a.citizens.current, a.graphs.current, a.pib.current, a:visited.citizens.current, a:visited.graphs.current, a:visited.pib.current {
+  a.citizens.current, a.graphs.current, a.pib.current, a.deudaperperson.current, a:visited.citizens.current, a:visited.graphs.current, a:visited.pib.current, a:visited.deudaperperson.current {
     background: red; }
 
-#viz, #ciudadano, #cocas {
+#viz, #ciudadano, #pib, #deudaperperson {
   margin: 0 auto;
   z-index: 9999;
   height: 500px; }

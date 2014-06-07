@@ -34,13 +34,165 @@ $(document).ready(function(e) {
     .draw()
     
     
-      /**
-	*	gráficamos pib por país
+     /**
+	*	gráficamos deudaperperson pib  por país
+	* 	------------------------------------------------------------------------------
+ 	* 		
+ 	*/
+    
+         // lo metemos directo para ahorrar tiempo de desarrollo
+  var pib_pais = [
+  		//México
+		{"año":1972, "name":"México", "value":"	45178119327	 "},
+		{"año":1973, "name":"México", "value":"   55271303176 	 "},
+		{"año":1974, "name":"México", "value":"   71976542927 	 "},
+		{"año":1975, "name":"México", "value":"   88003982689 	 "},
+		{"año":1976, "name":"México", "value":"   89023916067 	 "},
+		{"año":1977, "name":"México", "value":"   81825780564 	 "},
+		{"año":1978, "name":"México", "value":"   102517450026	 "},
+		{"año":1979, "name":"México", "value":"   134540322293	 "},
+		{"año":1980, "name":"México", "value":"   194356825709	 "},
+		{"año":1981, "name":"México", "value":"   250083027275	 "},
+		{"año":1982, "name":"México", "value":"   173720847691	 "},
+		{"año":1983, "name":"México", "value":"   148866911934	 "},
+		{"año":1984, "name":"México", "value":"   175632163244	 "},
+		{"año":1985, "name":"México", "value":"   184473097296	 "},
+		{"año":1986, "name":"México", "value":"   129440191340	 "},
+		{"año":1987, "name":"México", "value":"   140263673924	 "},
+		{"año":1988, "name":"México", "value":"   183144276294	 "},
+		{"año":1989, "name":"México", "value":"   222977042347	 "},
+		{"año":1990, "name":"México", "value":"   262709785593	 "},
+		{"año":1991, "name":"México", "value":"   314453895612	 "},
+		{"año":1992, "name":"México", "value":"   363609268789	 "},
+		{"año":1993, "name":"México", "value":"   510190972634	 "},
+		{"año":1994, "name":"México", "value":"   534119249743	 "},
+		{"año":1995, "name":"México", "value":"   347270048647	 "},
+		{"año":1996, "name":"México", "value":"   401777516321	 "},
+		{"año":1997, "name":"México", "value":"   486229121799	 "},
+		{"año":1998, "name":"México", "value":"   507980069262	 "},
+		{"año":1999, "name":"México", "value":"   586690161461	 "},
+		{"año":2000, "name":"México", "value":"   692177614210	 "},
+		{"año":2001, "name":"México", "value":"   733461550751	 "},
+		{"año":2002, "name":"México", "value":"   750477694898	 "},
+		{"año":2003, "name":"México", "value":"   722164975397	 "},
+		{"año":2004, "name":"México", "value":"   774800766586	 "},
+		{"año":2005, "name":"México", "value":"   870215085181	 "},
+		{"año":2006, "name":"México", "value":"   966249852838	 "},
+		{"año":2007, "name":"México", "value":"   1043459078120 "},
+		{"año":2008, "name":"México", "value":"   1099070673263 "},
+		{"año":2009, "name":"México", "value":"   895354565567	 "},
+		{"año":2010, "name":"México", "value":"   1047368841686 "},
+		{"año":2011, "name":"México", "value":"   1159889566239 "},
+		{"año":2012, "name":"México", "value":"   1178126184343 "},  
+		
+		//Turquía 
+		{"año":1972, "name":"Turquía", "value":"	    20431095406"},
+		{"año":1973, "name":"Turquía", "value":"     25724381625   "},
+		{"año":1974, "name":"Turquía", "value":"     35599913836   "},
+		{"año":1975, "name":"Turquía", "value":"     44633707243   "},
+		{"año":1976, "name":"Turquía", "value":"     51280134554   "},
+		{"año":1977, "name":"Turquía", "value":"     58676813687   "},
+		{"año":1978, "name":"Turquía", "value":"     65147022486   "},
+		{"año":1979, "name":"Turquía", "value":"     89394085658   "},
+		{"año":1980, "name":"Turquía", "value":"     68789289566   "},
+		{"año":1981, "name":"Turquía", "value":"     71040020140   "},
+		{"año":1982, "name":"Turquía", "value":"     64546332581   "},
+		{"año":1983, "name":"Turquía", "value":"     61678280115   "},
+		{"año":1984, "name":"Turquía", "value":"     59989909458   "},
+		{"año":1985, "name":"Turquía", "value":"     67234948265   "},
+		{"año":1986, "name":"Turquía", "value":"     75728009963   "},
+		{"año":1987, "name":"Turquía", "value":"     87172789528   "},
+		{"año":1988, "name":"Turquía", "value":"     90852814005   "},
+		{"año":1989, "name":"Turquía", "value":"     107143348667  "},
+		{"año":1990, "name":"Turquía", "value":"     150676291094  "},
+		{"año":1991, "name":"Turquía", "value":"     151041248184  "},
+		{"año":1992, "name":"Turquía", "value":"     159095003188  "},
+		{"año":1993, "name":"Turquía", "value":"     180422294772  "},
+		{"año":1994, "name":"Turquía", "value":"     130690172297  "},
+		{"año":1995, "name":"Turquía", "value":"     169485941048  "},
+		{"año":1996, "name":"Turquía", "value":"     181475555283  "},
+		{"año":1997, "name":"Turquía", "value":"     189834649111  "},
+		{"año":1998, "name":"Turquía", "value":"     269287100115  "},
+		{"año":1999, "name":"Turquía", "value":"     249751470869  "},
+		{"año":2000, "name":"Turquía", "value":"     266567531990  "},
+		{"año":2001, "name":"Turquía", "value":"     196005288838  "},
+		{"año":2002, "name":"Turquía", "value":"     232534560775  "},
+		{"año":2003, "name":"Turquía", "value":"     303005302818  "},
+		{"año":2004, "name":"Turquía", "value":"     392166274991  "},
+		{"año":2005, "name":"Turquía", "value":"     482979839238  "},
+		{"año":2006, "name":"Turquía", "value":"     530900095205  "},
+		{"año":2007, "name":"Turquía", "value":"     647155133932  "},
+		{"año":2008, "name":"Turquía", "value":"     730337495966  "},
+		{"año":2009, "name":"Turquía", "value":"     614553921823  "},
+		{"año":2010, "name":"Turquía", "value":"     731144392556  "},
+		{"año":2011, "name":"Turquía", "value":"     774775177386  "},
+		{"año":2012, "name":"Turquía", "value":" 	789257487307   "},		
+		//Indonesia
+
+		{"año":1972,"name":"Indonesia", "value":"	    11605084560"},
+		{"año":1973,"name":"Indonesia", "value":"     17171181163  "},
+		{"año":1974,"name":"Indonesia", "value":"     27227710999  "},
+		{"año":1975,"name":"Indonesia", "value":"     32147953008  "},
+		{"año":1976,"name":"Indonesia", "value":"     39328674730  "},
+		{"año":1977,"name":"Indonesia", "value":"     48396143465  "},
+		{"año":1978,"name":"Indonesia", "value":"     54298158340  "},
+		{"año":1979,"name":"Indonesia", "value":"     55122620334  "},
+		{"año":1980,"name":"Indonesia", "value":"     78013206038  "},
+		{"año":1981,"name":"Indonesia", "value":"     92473878832  "},
+		{"año":1982,"name":"Indonesia", "value":"     94715163814  "},
+		{"año":1983,"name":"Indonesia", "value":"     85369201879  "},
+		{"año":1984,"name":"Indonesia", "value":"     87612439197  "},
+		{"año":1985,"name":"Indonesia", "value":"     87338874330  "},
+		{"año":1986,"name":"Indonesia", "value":"     80060657612  "},
+		{"año":1987,"name":"Indonesia", "value":"     75929617715  "},
+		{"año":1988,"name":"Indonesia", "value":"     88787623310  "},
+		{"año":1989,"name":"Indonesia", "value":"     101455197786 "},
+		{"año":1990,"name":"Indonesia", "value":"     114426498045 "},
+		{"año":1991,"name":"Indonesia", "value":"     128167999847 "},
+		{"año":1992,"name":"Indonesia", "value":"     139116270052 "},
+		{"año":1993,"name":"Indonesia", "value":"     158006849879 "},
+		{"año":1994,"name":"Indonesia", "value":"     176892148243 "},
+		{"año":1995,"name":"Indonesia", "value":"     202132032844 "},
+		{"año":1996,"name":"Indonesia", "value":"     227369671349 "},
+		{"año":1997,"name":"Indonesia", "value":"     215748854647 "},
+		{"año":1998,"name":"Indonesia", "value":"     95445548017  "},
+		{"año":1999,"name":"Indonesia", "value":"     140001352527 "},
+		{"año":2000,"name":"Indonesia", "value":"     165021012262 "},
+		{"año":2001,"name":"Indonesia", "value":"     160446947638 "},
+		{"año":2002,"name":"Indonesia", "value":"     195660611034 "},
+		{"año":2003,"name":"Indonesia", "value":"     234772458818 "},
+		{"año":2004,"name":"Indonesia", "value":"     256836883305 "},
+		{"año":2005,"name":"Indonesia", "value":"     285868610017 "},
+		{"año":2006,"name":"Indonesia", "value":"     364570525997 "},
+		{"año":2007,"name":"Indonesia", "value":"     432216737775 "},
+		{"año":2008,"name":"Indonesia", "value":"     510244548960 "},
+		{"año":2009,"name":"Indonesia", "value":"     539579959053 "},
+		{"año":2010,"name":"Indonesia", "value":"     709190822691 "},
+		{"año":2011,"name":"Indonesia", "value":"     846341443778 "},
+		{"año":2012,"name":"Indonesia", "value":" 	878043027882   "}		 
+      ]
+
+  
+   // instantiate d3plus
+  var visualization = d3plus.viz()
+    .container("#pib")  // container DIV to hold the visualization
+    .data(pib_pais)  // data to use with the visualization
+    .type("line")       // visualization type
+    .id("name")         // key for which our data is unique on
+    .text("name")       // key to use for display text
+    .y("value")         // key to use for y-axis
+    .x("año")          // key to use for x-axis
+    .draw()             // finally, draw the visualization!
+    
+    
+    
+     /**
+	*	gráficamos deudaperperson por persona por país
 	* 	------------------------------------------------------------------------------
  	* 		
  	*/
      // lo metemos directo para ahorrar tiempo de desarrollo
-  var pib_pais = [
+  var deudaperperson_pais = [
   		//México
     	{"año": 1972, "name":"México", "value":	"148	"},
 		{"año": 1973, "name":"México", "value":	"183	"},
@@ -175,8 +327,8 @@ $(document).ready(function(e) {
   
    // instantiate d3plus
   var visualization = d3plus.viz()
-    .container("#pib")  // container DIV to hold the visualization
-    .data(pib_pais)  // data to use with the visualization
+    .container("#deudaperperson")  // container DIV to hold the visualization
+    .data(deudaperperson_pais)  // data to use with the visualization
     .type("line")       // visualization type
     .id("name")         // key for which our data is unique on
     .text("name")       // key to use for display text
@@ -343,13 +495,15 @@ $(document).ready(function(e) {
 	* 	------------------------------------------------------------------------------
  	* 		
  	*/
-	$("#pib").hide();
+	$("#deudaperperson").hide();
 	$("#ciudadano").hide();
+	$("#pib").hide();
 	$(".citizens").on('click', function() {
 		$("#ciudadano").toggle();
 		$("a").removeClass('current');		
 		$(".citizens").addClass('current');
 		$("#viz").hide();
+		$("#deudaperperson").hide();
 		$("#pib").hide();
 	});
 
@@ -358,6 +512,17 @@ $(document).ready(function(e) {
 		$("a").removeClass('current');
 		$(".graphs").addClass('current');
 		$("#viz").toggle();
+		$("#deudaperperson").hide();
+		$("#pib").hide();
+	});
+	
+	$(".deudaperperson").on('click', function() {
+		$("#ciudadano").hide();
+		
+		$("a").removeClass('current');
+		$(".deudaperperson").addClass('current');
+		$("#viz").hide();
+		$("#deudaperperson").toggle();
 		$("#pib").hide();
 	});
 	
@@ -367,6 +532,7 @@ $(document).ready(function(e) {
 		$("a").removeClass('current');
 		$(".pib").addClass('current');
 		$("#viz").hide();
+		$("#deudaperperson").hide();
 		$("#pib").toggle();
 	});
 	
