@@ -39,6 +39,7 @@
 				
 				<p>
 					<a href="#ciudadano" class="citizens">Ciudadanos</a>
+				 <a href="#pib" class="pib">Historial de PIB</a>
 				 <a href="#ciudadano" class="graphs current">Historial de Deuda</a></p>
 				</div>
 			</div>
@@ -46,6 +47,7 @@
 			
         	<div class="row-md-12">
         		<div id="ciudadano"></div>
+        		<div id="pib"></div>
 				<div id="viz"></div>
         	</div>
         </article>

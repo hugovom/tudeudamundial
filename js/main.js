@@ -34,6 +34,156 @@ $(document).ready(function(e) {
     .draw()
     
     
+      /**
+	*	gráficamos pib por país
+	* 	------------------------------------------------------------------------------
+ 	* 		
+ 	*/
+     // lo metemos directo para ahorrar tiempo de desarrollo
+  var pib_pais = [
+  		//México
+    	{"año": 1972, "name":"México", "value":	"148	"},
+		{"año": 1973, "name":"México", "value":	"183	"},
+		{"año": 1974, "name":"México", "value":	"235	"},
+		{"año": 1975, "name":"México", "value":	"298	"},
+		{"año": 1976, "name":"México", "value":	"380	"},
+		{"año": 1977, "name":"México", "value":	"481	"},
+		{"año": 1978, "name":"México", "value":	"536	"},
+		{"año": 1979, "name":"México", "value":	"625	"},
+		{"año": 1980, "name":"México", "value":	"818	"},
+		{"año": 1981, "name":"México", "value":	"1090	"},
+		{"año": 1982, "name":"México", "value":	"1175	"},
+		{"año": 1983, "name":"México", "value":	"1244	"},
+		{"año": 1984, "name":"México", "value":	"1244	"},
+		{"año": 1985, "name":"México", "value":	"1247	"},
+		{"año": 1986, "name":"México", "value":	"1273	"},
+		{"año": 1987, "name":"México", "value":	"1354	"},
+		{"año": 1988, "name":"México", "value":	"1203	"},
+		{"año": 1989, "name":"México", "value":	"1115	"},
+		{"año": 1990, "name":"México", "value":	"1215	"},
+		{"año": 1991, "name":"México", "value":	"1300	"},
+		{"año": 1992, "name":"México", "value":	"1253	"},
+		{"año": 1993, "name":"México", "value":	"1425	"},
+		{"año": 1994, "name":"México", "value":	"1482	"},
+		{"año": 1995, "name":"México", "value":	"1735	"},
+		{"año": 1996, "name":"México", "value":	"1608	"},
+		{"año": 1997, "name":"México", "value":	"1493	"},
+		{"año": 1998, "name":"México", "value":	"1582	"},
+		{"año": 1999, "name":"México", "value":	"1634	"},
+		{"año": 2000, "name":"México", "value":	"1466	"},
+		{"año": 2001, "name":"México", "value":	"1575	"},
+		{"año": 2002, "name":"México", "value":	"1492	"},
+		{"año": 2003, "name":"México", "value":	"1519	"},
+		{"año": 2004, "name":"México", "value":	"1550	"},
+		{"año": 2005, "name":"México", "value":	"1589	"},
+		{"año": 2006, "name":"México", "value":	"1547	"},
+		{"año": 2007, "name":"México", "value":	"1755	"},
+		{"año": 2008, "name":"México", "value":	"1798	"},
+		{"año": 2009, "name":"México", "value":	"1716	"},
+		{"año": 2010, "name":"México", "value":	"2067	"},
+		{"año": 2011, "name":"México", "value":	"2399	"},
+		{"año": 2012, "name":"México", "value":	"2937	"},
+		//Turquía
+		
+		{"año": 1972, "name":"Turquía", "value":"	97	"},	
+		{"año": 1973, "name":"Turquía", "value":"   113	"},	
+		{"año": 1974, "name":"Turquía", "value":"   121	"},	
+		{"año": 1975, "name":"Turquía", "value":"   129	"},	
+		{"año": 1976, "name":"Turquía", "value":"   150	"},	
+		{"año": 1977, "name":"Turquía", "value":"   279	"},	
+		{"año": 1978, "name":"Turquía", "value":"   354	"},	
+		{"año": 1979, "name":"Turquía", "value":"   371	"},	
+		{"año": 1980, "name":"Turquía", "value":"   436	"},	
+		{"año": 1981, "name":"Turquía", "value":"   428	"},	
+		{"año": 1982, "name":"Turquía", "value":"   429	"},	
+		{"año": 1983, "name":"Turquía", "value":"   432	"},	
+		{"año": 1984, "name":"Turquía", "value":"   449	"},	
+		{"año": 1985, "name":"Turquía", "value":"   529	"},	
+		{"año": 1986, "name":"Turquía", "value":"   656	"},	
+		{"año": 1987, "name":"Turquía", "value":"   800	"},	
+		{"año": 1988, "name":"Turquía", "value":"   786	"},	
+		{"año": 1989, "name":"Turquía", "value":"   784	"},	
+		{"año": 1990, "name":"Turquía", "value":"   915	"},	
+		{"año": 1991, "name":"Turquía", "value":"   926	"},	
+		{"año": 1992, "name":"Turquía", "value":"   1013"},	
+		{"año": 1993, "name":"Turquía", "value":"   1210"},	
+		{"año": 1994, "name":"Turquía", "value":"   1150"},	
+		{"año": 1995, "name":"Turquía", "value":"   1261"},	
+		{"año": 1996, "name":"Turquía", "value":"   1343"},	
+		{"año": 1997, "name":"Turquía", "value":"   1403"},	
+		{"año": 1998, "name":"Turquía", "value":"   1581"},	
+		{"año": 1999, "name":"Turquía", "value":"   1635"},	
+		{"año": 2000, "name":"Turquía", "value":"   1849"},	
+		{"año": 2001, "name":"Turquía", "value":"   1762"},	
+		{"año": 2002, "name":"Turquía", "value":"   1992"},	
+		{"año": 2003, "name":"Turquía", "value":"   2163"},	
+		{"año": 2004, "name":"Turquía", "value":"   2366"},	
+		{"año": 2005, "name":"Turquía", "value":"   2541"},	
+		{"año": 2006, "name":"Turquía", "value":"   3054"},	
+		{"año": 2007, "name":"Turquía", "value":"   3719"},	
+		{"año": 2008, "name":"Turquía", "value":"   4107"},	
+		{"año": 2009, "name":"Turquía", "value":"   3892"},	
+		{"año": 2010, "name":"Turquía", "value":"   4147"},	
+		{"año": 2011, "name":"Turquía", "value":"   4181"},	
+		{"año": 2012, "name":"Turquía", "value":"   4561"},
+
+		//Indonesia
+		{"año":1972,"name":"Indonesia", "value":"	49		"},
+		{"año":1973,"name":"Indonesia", "value":"	59		"},
+		{"año":1974,"name":"Indonesia", "value":"	72		"},
+		{"año":1975,"name":"Indonesia", "value":"	89		"},
+		{"año":1976,"name":"Indonesia", "value":"	106		"},
+		{"año":1977,"name":"Indonesia", "value":"	121		"},
+		{"año":1978,"name":"Indonesia", "value":"	130		"},
+		{"año":1979,"name":"Indonesia", "value":"	131		"},
+		{"año":1980,"name":"Indonesia", "value":"	144		"},
+		{"año":1981,"name":"Indonesia", "value":"	153		"},
+		{"año":1982,"name":"Indonesia", "value":"	165		"},
+		{"año":1983,"name":"Indonesia", "value":"	194		"},
+		{"año":1984,"name":"Indonesia", "value":"	201		"},
+		{"año":1985,"name":"Indonesia", "value":"	226		"},
+		{"año":1986,"name":"Indonesia", "value":"	259		"},
+		{"año":1987,"name":"Indonesia", "value":"	311		"},
+		{"año":1988,"name":"Indonesia", "value":"	314		"},
+		{"año":1989,"name":"Indonesia", "value":"	338		"},
+		{"año":1990,"name":"Indonesia", "value":"	391		"},
+		{"año":1991,"name":"Indonesia", "value":"	437		"},
+		{"año":1992,"name":"Indonesia", "value":"	476		"},
+		{"año":1993,"name":"Indonesia", "value":"	474		"},
+		{"año":1994,"name":"Indonesia", "value":"	564		"},
+		{"año":1995,"name":"Indonesia", "value":"	641		"},
+		{"año":1996,"name":"Indonesia", "value":"	654		"},
+		{"año":1997,"name":"Indonesia", "value":"	681		"},
+		{"año":1998,"name":"Indonesia", "value":"	746		"},
+		{"año":1999,"name":"Indonesia", "value":"	737		"},
+		{"año":2000,"name":"Indonesia", "value":"	688		"},
+		{"año":2001,"name":"Indonesia", "value":"	624		"},
+		{"año":2002,"name":"Indonesia", "value":"	596		"},
+		{"año":2003,"name":"Indonesia", "value":"	613		"},
+		{"año":2004,"name":"Indonesia", "value":"	621		"},
+		{"año":2005,"name":"Indonesia", "value":"	632		"},
+		{"año":2006,"name":"Indonesia", "value":"	597		"},
+		{"año":2007,"name":"Indonesia", "value":"	640		"},
+		{"año":2008,"name":"Indonesia", "value":"	674		"},
+		{"año":2009,"name":"Indonesia", "value":"	755		"},
+		{"año":2010,"name":"Indonesia", "value":"	832		"},
+		{"año":2011,"name":"Indonesia", "value":"	922		"},
+		{"año":2012,"name":"Indonesia", "value":"	1033	"}		
+   
+  ]
+
+  
+   // instantiate d3plus
+  var visualization = d3plus.viz()
+    .container("#pib")  // container DIV to hold the visualization
+    .data(pib_pais)  // data to use with the visualization
+    .type("line")       // visualization type
+    .id("name")         // key for which our data is unique on
+    .text("name")       // key to use for display text
+    .y("value")         // key to use for y-axis
+    .x("año")          // key to use for x-axis
+    .draw()             // finally, draw the visualization!
+
     
     
   /**
@@ -193,21 +343,33 @@ $(document).ready(function(e) {
 	* 	------------------------------------------------------------------------------
  	* 		
  	*/
-	$("#cocas").hide();
+	$("#pib").hide();
 	$("#ciudadano").hide();
 	$(".citizens").on('click', function() {
 		$("#ciudadano").toggle();
+		$("a").removeClass('current');		
 		$(".citizens").addClass('current');
-		$(".graphs").removeClass('current');
-		$("#viz").toggle();
+		$("#viz").hide();
+		$("#pib").hide();
 	});
-	$("#ciudadano").hide();
+
 	$(".graphs").on('click', function() {
-		$("#ciudadano").toggle();
+		$("#ciudadano").hide();
+		$("a").removeClass('current');
 		$(".graphs").addClass('current');
-		$(".citizens").removeClass('current');
 		$("#viz").toggle();
+		$("#pib").hide();
 	});
+	
+	$(".pib").on('click', function() {
+		$("#ciudadano").hide();
+		
+		$("a").removeClass('current');
+		$(".pib").addClass('current');
+		$("#viz").hide();
+		$("#pib").toggle();
+	});
+	
 
 
 });
