@@ -63,7 +63,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline; }
 
 h1, h2, h3, h4, h5, .cta, blockquote.feature, #access, #insidenav, #pagination, .bloglist .more, blockquote {
-  font-family: "carrois_gothicregular", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 500; }
 
 /* = HEADINGS */
@@ -750,15 +750,57 @@ input:focus, select:focus, textarea:focus {
 
 /* =Main content and comment content
 -------------------------------------------------------------- */
-header h1 {
-  text-align: center; }
-header h2 {
-  font-size: 80px; }
-  header h2 span {
-    font-size: 16px; }
-  header h2 small {
-    display: block;
-    font-size: 20px; }
+* {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif; }
+
+header {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc; }
+  header h1 {
+    text-align: left;
+    font-weight: 700;
+    position: absolute;
+    top: 76px; }
+  header h2 {
+    font-size: 150px;
+    text-align: right; }
+    header h2 span {
+      font-size: 16px; }
+    header h2 small {
+      color: red;
+      display: block;
+      font-size: 20px; }
+
+.project {
+  padding-top: 30px; }
+
+li {
+  margin-left: 30px; }
+
+a.citizens, a.graphs, a:visited.citizens, a:visited.graphs {
+  background: black;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 15px; }
+  a.citizens.current, a.graphs.current, a:visited.citizens.current, a:visited.graphs.current {
+    background: red; }
+
+#viz, #ciudadano, #cocas {
+  margin: 0 auto;
+  z-index: 9999;
+  height: 500px; }
+
+#ciudadano {
+  padding-bottom: 20px; }
+
+footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc; }
+  footer p {
+    color: #ccc;
+    font-size: 11px;
+    text-align: center; }
 
 /* =Media queries
 -------------------------------------------------------------- */

@@ -7,17 +7,65 @@
 
 /* =Main content and comment content
 -------------------------------------------------------------- */
+
+* { font-family:  $font-family-base}
 header {
-	h1 { text-align: center;}
-	h2 { font-size: 80px;
+	padding: 10px 0;
+	border-bottom: 1px solid #ccc;
+	h1 { text-align: left;
+		font-weight: 700;
+		position: absolute;
+		top: 76px;
+	}
+	h2 { font-size: 150px;
+		text-align: right;
 		span { font-size: 16px;}
 		small {
-		display: block;
-		font-size: 20px;
+			color: red;
+			display: block;
+			font-size: 20px;
+			
 		}
 	}
 }
-  
+
+.project {
+	padding-top: 30px;
+}
+
+li { margin-left: 30px;}
+
+a.citizens,
+a.graphs,
+a:visited.citizens,
+a:visited.graphs  { 
+	background: black;
+	color: #fff;
+	font-size: 12px;
+	padding: 5px 15px;
+	&.current { background: red;}
+}
+ 
+#viz,
+#ciudadano,
+#cocas { 
+ 	margin: 0 auto;
+ 	z-index: 9999;
+ 	height: 500px;
+}
+
+#ciudadano { padding-bottom: 20px;}
+
+
+footer {
+	margin-top: 40px;
+	padding-top: 20px;
+	border-top: 1px solid #ccc;
+	p {
+		color: #ccc;
+		font-size: 11px;
+		text-align: center;}
+}
 
 /* =Media queries
 -------------------------------------------------------------- */

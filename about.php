@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Tu deuda mundial</title>
+        <title>Acerca del proyecto tu deuda mundial</title>
         <meta name="description" content="Describe cuánto debes al mundo como mexicano.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -25,7 +25,7 @@
         <div id="main" class="container">
         	<header class="row">
 				<div class="col-md-6">
-					<h1>Tu deuda mundial</h1>
+					<h1><a href="/">Tu deuda mundial</a></h1>
 				</div>
 				<div class="col-md-6">
 					<h2>$2,937<span>USD</span> <small>($37,950.45 MXN deuda por cada mexicano al 2012)</small>  </h2>
@@ -33,20 +33,44 @@
 				
 			</header>
 			<div class="row">
-			<div class="col-md-12">
-				<!-- create container element for visualization -->
-					
-				
-				<p>
-					<a href="#ciudadano" class="citizens">Ciudadanos</a>
-				 <a href="#ciudadano" class="graphs current">Historial de Deuda</a></p>
-				</div>
-			</div>
+			
 			<article class="row">
 			
-        	<div class="row-md-12">
-        		<div id="ciudadano"></div>
-				<div id="viz"></div>
+        	<div class="col-md-10 col-md-offset-1 ">
+        		<h2 class="project">Proyecto</h2>
+        		<h3>¿Cuánto tendrías que pagar como ciudadano para saldar la deuda externa de tu país? </h3>
+        		<ul>
+        			<li>Dar a conocer a la ciudadanía el monto de la deuda externa y como ésta les afecta de manera personal en el gasto diario. </li>
+					<li>Visualizar comparaciones con deudas externas de otros países.															 </li>
+					<li>Explicar qué implica la deuda externa de nuestro país																	 </li>
+        		</ul>
+        		
+				<h3>Qué hicimos</h3>
+				<p>
+
+
+					Analizamos los datos de la deuda externa de México y la comparamos con la de Turquía e Indonesia 
+					(por tener estos países un número similar de deuda con relación al PIB)</p>
+
+					<h3>Qué sigue</h3>
+					<ul>
+						<li>Averiguar los orígenes de la deuda, saber exactamente qué tenemos que pagar hoy en día, cuánto debían nuestros abuelos, nuestros padres, nosotros y nuestros hijos y nietos</li>
+						<li>Si seguimos aumentando como hasta ahora, en cuántos años volveremos a estar en una crisis financiera semejante a la del 1995												 </li>
+						<li>Visualización interactiva de México con el resto del mundo																												 </li>
+					</ul>
+				<h2 class="project">Equipo</h2>
+				<ul>
+					<li>César Gutiérrez		  </li>
+					<li>Chris Dalby			  </li>
+					<li>Ela Stapley			  </li>
+					<li>Hugo Osorio			  </li>
+					<li>Lilia Saúl			  </li>
+					<li>Yosune Chamizo Alberro</li>
+					<li>Vera Penêda 		  </li>
+				
+				
+				</ul>
+				
         	</div>
         </article>
         <footer class="row">
@@ -59,11 +83,7 @@
         
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <!-- load D3js -->
-		<script src="js/vendor/d3.js"></script>
- 
-		<!-- load D3plus after D3js -->
-		<script src="js/vendor/d3plus.js"></script>
+
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
