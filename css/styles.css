@@ -788,7 +788,8 @@ a.citizens, a.graphs, a.pib, a.deudaperperson, a:visited.citizens, a:visited.gra
 #viz, #ciudadano, #pib, #deudaperperson {
   margin: 0 auto;
   z-index: 9999;
-  height: 500px; }
+  height: 500px;
+  margin-bottom: 80px; }
 
 #ciudadano {
   padding-bottom: 20px; }

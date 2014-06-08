@@ -22,19 +22,22 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div id="main" class="container">
-        	<header class="row">
+        <div id="main">
+        	<header>
+        		<div class="container">
+        		<div class="row">
 				<div class="col-md-6">
 					<h1>Tu deuda mundial</h1>
 				</div>
 				<div class="col-md-6">
-					<h2>$2,937<span>USD</span> <small>($37,950.45 MXN deuda por cada mexicano al 2012)</small>  </h2>
+					<h2>$2,937<span>USD</span> <small>($37,950.45 MXN deuda externa por mexicano al 2012)</small>  </h2>
 				</div>
-				
+        		</div>
+        		</div>
 			</header>
+			<div class="container">
 			<div class="row">
 			<div class="col-md-12">
-				<!-- create container element for visualization -->
 					
 				
 				<p>
@@ -47,19 +50,37 @@
 			<article class="row">
 			
         	<div class="row-md-12">
-        		<div id="ciudadano"></div>
-        		<div id="deudaperperson"></div>
-        		<div id="pib"></div>
-				<div id="viz"></div>
+        		<div id="ciudadano">
+	        		<h2>Deuda mundial por ciudadano</h2>
+	        		<p>Comparación entre deuda en USD contra el total de la población por país al 2012.</p>
+	        		<div id="ciudadano_graph"></div>
+        		</div>
+        		<div id="deudaperperson">
+	        		<h2>Historial de deuda mundial por ciudadano</h2>
+	        		<p>Comparación de 1972 a 2012 entre México, Turquía e Indonesia.</p>
+	        		<div id="deudaperperson_graph"></div>
+        		</div>
+        		<div id="pib">
+	        		<h2>Historial del PIB por País</h2>
+	        		<p>Comparación de 1972 a 2012 entre México, Turquía e Indonesia.</p>
+	        		<div id="pib_graph"></div>
+        		</div>
+				<div id="viz">
+					<h2>Historial de deuda externa por País</h2>
+	        		<p>Comparación de 1972 a 2012 entre México, Turquía e Indonesia.</p>
+	        		<div id="viz_graph"></div>
+				</div>
         	</div>
         </article>
-        <footer class="row">
+        	        		</div>
+
+     
+        </div>
+           <footer class="row">
         	<div class="col-md-12">
         		<p><a href="/about.php">Acerca del sitio</a></p>
         	</div>
         </footer>
-        </div>
-        
         
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>

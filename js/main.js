@@ -17,25 +17,29 @@ $(document).ready(function(e) {
  	* 		
  	*/
     var ciudadanos = [
-    	{"value": 4561, "name": "Turquía"},
-		{"value": 2937, "name": "México"},
-		{"value": 1033, "name": "Indonesia"}
+    	{"USD": 4561, "población": 79749461, "nombre": "Turquía"},
+		{"USD": 2937, "población":  114975406, "nombre": "México"},
+		{"USD": 1033, "población": 248216193, "nombre": "Indonesia"}
 	]
   	
   	
   	
   	
   var visualization = d3plus.viz()
-    .container("#ciudadano")
+    .container("#ciudadano_graph")
     .data(ciudadanos)
-    .type("tree_map")
-    .id("name")
-    .size("value")
+    .type("chart")
+    .legend(false)
+    .id("nombre")
+	//    .size("value")
+   .x("población")         // key for x-axis
+    .y("USD") 
     .draw()
     
     
+    
      /**
-	*	gráficamos deudaperperson pib  por país
+	*	gráficamos pib  por país
 	* 	------------------------------------------------------------------------------
  	* 		
  	*/
@@ -175,10 +179,12 @@ $(document).ready(function(e) {
   
    // instantiate d3plus
   var visualization = d3plus.viz()
-    .container("#pib")  // container DIV to hold the visualization
+    .container("#pib_graph")  // container DIV to hold the visualization
     .data(pib_pais)  // data to use with the visualization
     .type("line")       // visualization type
     .id("name")         // key for which our data is unique on
+    .color({
+    	"heatmap": ["#000","#ccc", "#555"]})
     .text("name")       // key to use for display text
     .y("value")         // key to use for y-axis
     .x("año")          // key to use for x-axis
@@ -327,13 +333,14 @@ $(document).ready(function(e) {
   
    // instantiate d3plus
   var visualization = d3plus.viz()
-    .container("#deudaperperson")  // container DIV to hold the visualization
+    .container("#deudaperperson_graph")  // container DIV to hold the visualization
     .data(deudaperperson_pais)  // data to use with the visualization
     .type("line")       // visualization type
     .id("name")         // key for which our data is unique on
     .text("name")       // key to use for display text
     .y("value")         // key to use for y-axis
     .x("año")          // key to use for x-axis
+     .color("name")
     .draw()             // finally, draw the visualization!
 
     
@@ -481,7 +488,7 @@ $(document).ready(function(e) {
 
   // instantiate d3plus
   var visualization = d3plus.viz()
-    .container("#viz")  // container DIV to hold the visualization
+    .container("#viz_graph")  // container DIV to hold the visualization
     .data(deuda_publica)  // data to use with the visualization
     .type("line")       // visualization type
     .id("name")         // key for which our data is unique on

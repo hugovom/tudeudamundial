@@ -46,7 +46,7 @@ a:visited.deudaperperson  {
 	background: black;
 	color: #fff;
 	font-size: 12px;
-	padding: 5px 15px;
+	padding: 5px 15px; 
 	&.current { background: red;}
 }
  
@@ -57,6 +57,7 @@ a:visited.deudaperperson  {
  	margin: 0 auto;
  	z-index: 9999;
  	height: 500px;
+ 	margin-bottom: 80px;
 }
 
 #ciudadano { padding-bottom: 20px;}
